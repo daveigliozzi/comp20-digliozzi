@@ -1,19 +1,44 @@
-body { 
-    background-image: url(omfgdogs.gif);
+@media only screen and (min-width: 992px) {
+	body { 
+    	background-image: url(omfgdogs.gif);
 
     
+	}
 }
 
-a{
-	font-size: 50px;
+@media only screen and (min-width: 992px) {
+	a{
+		font-size: 50px;
+		color: white;
+		font-family: Arial;
+		text-decoration: none;
+		text-align:  center;
+		font-variant: small-caps;
+		font-weight: lighter;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+		position: fixed;
+		top: 80%;
+		left: 80%;
+	}
+}
+
+a {
 	color: white;
-	font-family: Arial;
-	text-decoration: none;
-	text-align:  center;
-	font-variant: small-caps;
-	font-weight: lighter;
-	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-	position: fixed;
-	top: 80%;
-	left: 80%;
+}
+
+p{
+	color: transparent;
+}
+@media only screen and (max-width: 991px) {
+	p{
+		font-size: 25px;
+		color: #3366FF;
+		font-family: Arial;
+		text-decoration: none;
+		font-variant: small-caps;
+		font-weight: lighter;
+		position: fixed;
+		text-align: center;
+		
+	}
 }
