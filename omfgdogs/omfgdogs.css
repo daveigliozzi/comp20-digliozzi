@@ -6,6 +6,7 @@
 	}
 }
 
+
 @media only screen and (min-width: 992px) {
 	a{
 		font-size: 50px;
@@ -31,6 +32,7 @@ p{
 }
 @media only screen and (max-width: 991px) {
 	p{
+		display: block;
 		font-size: 25px;
 		color: #3366FF;
 		font-family: Arial;
@@ -39,6 +41,10 @@ p{
 		font-weight: lighter;
 		position: fixed;
 		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+		margin-top: 20%;
 		
 	}
 }
