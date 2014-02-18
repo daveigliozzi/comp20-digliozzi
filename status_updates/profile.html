@@ -6,12 +6,22 @@
 <title>Fecesbook</title>
 <script>
 	function update(){
+
+		var currentdate = new Date();
+
+    	var datetime = (currentdate.getMonth()+1) + "/" + currentdate.getDate() +
+    	 "/" + currentdate.getFullYear() + " " 
+    	+ currentdate.getHours() + ":" 
+    	+ currentdate.getMinutes() + ":" + currentdate.getSeconds();
+
+
 		var newUpdate = document.getElementById("msg").value;
 		var status = document.getElementById("status");
 		var newStatus = document.createElement("div");
 		status.appendChild(newStatus);
-		newStatus.innerHTML = newUpdate;
-		alert(Date.prototype.getHours());
+		newStatus.innerHTML = datetime + " - " + newUpdate;
+		var clear = document.getElementById("msg");
+		clear.value = "";
 	};
 
 </script>
