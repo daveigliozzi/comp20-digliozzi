@@ -18,8 +18,9 @@
 		var newUpdate = document.getElementById("msg").value;
 		var status = document.getElementById("status");
 		var newStatus = document.createElement("div");
-		status.appendChild(newStatus);
-		newStatus.innerHTML = datetime + " - " + newUpdate;
+		var firstElement = status.firstChild;
+		status.insertBefore(newStatus, firstElement);
+		newStatus.innerHTML = datetime + "  --  " + newUpdate;
 		var clear = document.getElementById("msg");
 		clear.value = "";
 	};
