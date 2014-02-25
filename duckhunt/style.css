@@ -6,5 +6,10 @@ canvas {
     background-color: #87CEEB;
 }
 
+#source {
+display: none;
+
+}
+
 body {
 }
