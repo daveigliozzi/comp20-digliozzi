@@ -6,6 +6,7 @@ canvas {
     background-color: #87CEEB;
 }
 
+/*So the original sprite sheet will not appear on the canvas*/
 #source {
 display: none;
 
