@@ -3,6 +3,7 @@
 <html>
 
 <head>
+	<link type="text/css" rel="stylesheet" href="jobs.css"/>
 <title>Friends of Ming Chow Jobs Listing</title>
 <script>
 	function parse() {
@@ -14,12 +15,14 @@
 		var s = "";
 
 		for(var i = 0; i < parsed.length; i++){
-			s += parsed[i]["company"];
+			s += "<div>";
+			s += "Company: " + parsed[i]["company"];
 			s += "<br/>";
-			s += parsed[i]["location"];
+			s += "Location: " + parsed[i]["location"];
 			s += "<br/>";
-			s += parsed[i]["position"];
+			s += "Position: " + parsed[i]["position"];
 			s += "<br/>";
+			s += "</div>";
 
 		};
 		test.innerHTML = s;
