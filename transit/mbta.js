@@ -46,6 +46,7 @@ else if(request.readyState == 4 && request.status == 500){
 	schduleDom.innterHTML = '<p><img alt = "alternative picture for error" src= http://mavdig.com/images/blog_header/the-dude-abides-christian-broadbent.jpg </img></p>'
 }
 
+}
 function getMyLocation()
 {
 	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
