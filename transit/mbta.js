@@ -26,8 +26,8 @@ function init()
 	request.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
 
 	//handles the response
-	//request.onreadystatechange = dataReady();
-	//request.send(null); //Go! Execute!
+	request.onreadystatechange = dataReady();
+	request.send(null); //Go! Execute!
 }
 
 function dataReady(){
