@@ -75,7 +75,6 @@ function renderMap()
 		infowindow.open(map, marker);
 	});
 	
-	console.log(scheduleData["line"]);
 	for(var i = 0; i < lineData.length; i++){
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase()){
 			mark = new google.maps.Marker({
