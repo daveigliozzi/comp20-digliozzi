@@ -26,7 +26,7 @@ function init()
 	request.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
 
 	//handles the response
-	request.onreadystatechange = dataReady;
+	request.onreadystatechange = dataReady();
 	request.send(null); //Go! Execute!
 }
 
@@ -92,20 +92,5 @@ function renderMap()
 			});
 		}
 		
+	}
 }
-}
-/*
-function createMarker(place)
-{
-	var placeLoc = place.geometry.location;
-	var marker = new google.maps.Marker({
-		map: map,
-		position: place.geometry.location
-	});
-
-	google.maps.event.addListener(marker, 'click', function() {
-		infowindow.close();
-		infowindow.setContent(place.name);
-		infowindow.open(map, this);
-	});
-}*/
