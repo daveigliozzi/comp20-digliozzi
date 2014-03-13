@@ -28,13 +28,6 @@ function init()
 }
 
 function dataReady(){
-//console.log(xhr.readyState);
-//ready state numbers
-//0 = not initialized
-//1 = set up
-//2 = sent
-//3 = in progress
-//4 = complete
 
 if(request.readyState == 4){
 	scheduleData = JSON.parse(request.responseText);
@@ -82,17 +75,17 @@ function renderMap()
 	});
 	
 	// Calling Google Places API
-	var request = {
+	/*var request = {
 		location: me,
 		radius: '500',
 		types: ['food']
 	};
 	service = new google.maps.places.PlacesService(map);
-	service.search(request, callback);
+	service.search(request, callback);*/
 }
 
 // Taken from http://code.google.com/apis/maps/documentation/javascript/places.html
-function callback(results, status)
+/*function callback(results, status)
 {
 	if (status == google.maps.places.PlacesServiceStatus.OK) {
 		alert("Got places back!");
@@ -101,7 +94,7 @@ function callback(results, status)
 			createMarker(results[i]);
 		}
 	}
-}
+}*/
 
 function createMarker(place)
 {
