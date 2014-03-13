@@ -32,7 +32,7 @@ function init()
 
 function dataReady(){
 
-	if(request.readyState == 4){
+	if(request.readyState == 4 && request.status == 200){
 		scheduleData = JSON.parse(request.responseText);
 	
 	}
