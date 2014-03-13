@@ -87,7 +87,7 @@ function renderMap()
 	google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
-	};
+	}
 
 	// Calling Google Places API
 	/*var request = {
