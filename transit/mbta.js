@@ -80,16 +80,19 @@ function renderMap()
 		marker = new google.maps.Marker({
 		position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 		title: lineData[i]["name"]
-	});
-	marker.setMap(map);
-		
-	// Open info window on click of marker
-	google.maps.event.addListener(marker, 'click', function() {
+		marker.setMap(map);
+
+		google.maps.event.addListener(marker, 'click', function() {
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
+	});
+	
+		
+	
+	
 }
 
-
+/*
 function createMarker(place)
 {
 	var placeLoc = place.geometry.location;
@@ -103,4 +106,4 @@ function createMarker(place)
 		infowindow.setContent(place.name);
 		infowindow.open(map, this);
 	});
-}
+}*/
