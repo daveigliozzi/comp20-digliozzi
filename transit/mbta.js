@@ -77,17 +77,20 @@ function renderMap()
 	
 
 	for(var i = 0; i < lineData.length; i++){
-		mark = new google.maps.Marker({
-		position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-		title: lineData[i]["name"]
-		
-		});
-	mark.setMap(map);
 
-	google.maps.event.addListener(mark, 'click', function() {
-	infowindow.setContent(mark.title);
-	infowindow.open(map, mark);	
-	});
+		if (scheduleData["line"] == lineData[i]["line"]){
+			mark = new google.maps.Marker({
+			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
+			title: lineData[i]["name"]
+			});
+			mark.setMap(map);
+
+			google.maps.event.addListener(mark, 'click', function() {
+			infowindow.setContent(mark.title);
+			infowindow.open(map, mark);	
+			});
+		}
+		
 }
 }
 /*
