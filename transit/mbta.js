@@ -76,6 +76,18 @@ function renderMap()
 	});
 	
 
+	for(var i = 0; i < parsed.length; i++){
+		marker = new google.maps.Marker({
+		position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
+		title: lineData[i]["name"]
+	});
+	marker.setMap(map);
+		
+	// Open info window on click of marker
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	};
 
 	// Calling Google Places API
 	/*var request = {
