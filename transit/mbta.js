@@ -82,7 +82,7 @@ function renderMap()
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"],
-			//icon: "flag.png"
+			icon: "flag.png"
 			});
 			mark.setMap(map);
 
