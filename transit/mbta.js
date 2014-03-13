@@ -77,7 +77,7 @@ function renderMap()
 	
 	console.log(scheduleData["line"]);
 	for(var i = 0; i < lineData.length; i++){
-
+		console.log(lineData[i]["line"]);
 		if (scheduleData["line"] == lineData[i]["line"]){
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
