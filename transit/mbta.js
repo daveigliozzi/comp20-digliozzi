@@ -38,11 +38,11 @@ function dataReady(){
 
 if(request.readyState == 4){
 	scheduleData = JSON.parse(request.responseText);
-	scheduleDom = document.getElementById("schedule");
+	//scheduleDom = document.getElementById("schedule");
 	scheduleDom.innerHTML = scheduleData["line"];
 }
 else if(request.readyState == 4 && request.status == 500){
-	scheduleDom = document.getElementById("schedule");
+	//scheduleDom = document.getElementById("schedule");
 	schduleDom.innterHTML = '<p><img alt = "alternative picture for error" src= http://mavdig.com/images/blog_header/the-dude-abides-christian-broadbent.jpg </img></p>'
 }
 
