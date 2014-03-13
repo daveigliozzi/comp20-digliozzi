@@ -74,6 +74,8 @@ function renderMap()
 		infowindow.setContent(marker.title);
 		infowindow.open(map, marker);
 	});
+
+	scheduleData = JSON.parse(request.responseText);
 	
 	for(var i = 0; i < lineData.length; i++){
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase()){
