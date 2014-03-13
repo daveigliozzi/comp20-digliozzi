@@ -32,12 +32,13 @@ function init()
 
 function dataReady(){
 
-if(request.readyState == 4){
-	scheduleData = JSON.parse(request.responseText);
+	if(request.readyState == 4){
+		scheduleData = JSON.parse(request.responseText);
 	
-else if(request.readyState == 4 && request.status == 500){
-	alert("Uh Oh, Spaghetti-O");
-}
+	}
+	else if(request.readyState == 4 && request.status == 500){
+		alert("Uh Oh, Spaghetti-O");
+	}
 
 }
 function getMyLocation()
