@@ -1,7 +1,6 @@
 for(var i = 0; i < lineData.length; i++)
 	{
 
-		//var markerArray[];
 
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
 		{		

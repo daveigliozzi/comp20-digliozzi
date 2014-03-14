@@ -22,13 +22,15 @@ var scheduleData;
 function init()
 {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	getMyLocation();
+
 
 	request.open("get", "http://mbtamap.herokuapp.com/mapper/rodeo.json", true);
 
 	//handles the response
 	request.onreadystatechange = dataReady;
 	request.send(null); //Go! Execute!
+
+	getMyLocation();
 }
 
 function dataReady()
@@ -176,72 +178,3 @@ function renderLines(i, mark)
 		}
 	}
 }
-
-/*function identifyColor(i)
-{
-	var color = lineData[i]["line"].toLowerCase();
-	var red = "red";
-	var blue = "blue";
-	var orange = "orange";
-
-	if (color = red.toLowerCase())
-	{
-		createRedMarker(i);
-	}
-	else if (color = blue.toLowerCase())
-	{
-		createBlueMarker(i);
-	}
-	else if (color = orange.toLowerCase())
-	{
-		createOrangeMarker(i);
-	}
-}
-
-function createRedMarker(i)
-{
-	mark1 = new google.maps.Marker({
-	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"],
-	icon: "flag.png"
-	});
-	mark1.setMap(map);
-
-	google.maps.event.addListener(mark1, 'click', function() {
-	infowindow.setContent(mark1.title);
-	infowindow.open(map, mark1);	
-	});
-}
-
-function createBlueMarker(i)
-{
-	mark2 = new google.maps.Marker({
-	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"]
-	});
-	mark2.setMap(map);
-
-	google.maps.event.addListener(mark2, 'click', function() {
-	infowindow.setContent(mark2.title);
-	infowindow.open(map, mark2);	
-	});
-}
-
-function createOrangeMarker(i)
-{
-	mark3 = new google.maps.Marker({
-	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"]
-	});
-	mark3.setMap(map);
-
-	google.maps.event.addListener(mark3, 'click', function() {
-	infowindow.setContent(mark3.title);
-	infowindow.open(map, mark3);	
-	});
-}*/
-
-
-
-
-
