@@ -136,7 +136,7 @@ function renderMap()
 					});
 					path.setMap(map);
 				}
-				j =+;
+				j = j + 1;
 			}
 		}
 	}
