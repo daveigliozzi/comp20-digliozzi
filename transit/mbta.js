@@ -99,8 +99,9 @@ function loopLines()
 
 function createMarker(i)
 {
-			if(lineData[i]["line"] == "Blue")
-		{
+	console.log(lineData[i]["line"]);
+	if(lineData[i]["line"] == "Blue")
+	{
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"]
