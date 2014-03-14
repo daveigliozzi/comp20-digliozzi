@@ -105,16 +105,19 @@ function createMarker(i)
 function identifyColor(i)
 {
 	var color = lineData[i]["line"].toLowerCase();
+	var red = "red";
+	var blue = "blue";
+	var orange = "orange";
 
-	if (color = "red")
+	if (color = red.toLowerCase())
 	{
 		createRedMarker(i);
 	}
-	else if (color = "blue")
+	else if (color = blue.toLowerCase())
 	{
 		createBlueMarker(i);
 	}
-	else if (color = "orange")
+	else if (color = orange.toLowerCase())
 	{
 		createOrangeMarker(i);
 	}
