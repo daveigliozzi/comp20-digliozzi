@@ -78,16 +78,28 @@ function renderMap()
 		infowindow.open(map, marker);
 	});
 
-	
+	loopLines();
 
+	
+	
+}
+
+function loopLines()
+{
 	for(var i = 0; i < lineData.length; i++)
 	{
-
-		//var markerArray[];
-
+		var j = 0;
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
-		{		
-				if(lineData[i]["line"] == "Blue")
+		{
+			createMarker(i);		
+		}
+
+	}
+}
+
+function createMarker(i)
+{
+			if(lineData[i]["line"] == "Blue")
 		{
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
@@ -178,19 +190,6 @@ function renderMap()
 				path.setMap(map);
 			}
 		}
-		}
-	}
-	
+
 }
 
-//function loopLines()
-//{
-	
-
-//}
-
-//function lineColor(i)
-//{
-	
-
-//}
