@@ -78,7 +78,7 @@ function renderMap()
 		infowindow.open(map, marker);
 	});
 
-	scheduleData = JSON.parse(request.responseText);
+	//scheduleData = JSON.parse(request.responseText);
 
 
 	for(var i = 0; i < lineData.length; i++)
