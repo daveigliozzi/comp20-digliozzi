@@ -23,6 +23,7 @@ function init()
 	request.onreadystatechange = dataReady;
 	request.send(null); //Go! Execute!
 }
+
 function dataReady()
 {
 
@@ -35,3 +36,18 @@ function dataReady()
 	}
 
 }
+
+function getMyLocation()
+{
+	if (navigator.geolocation) { // the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			myLat = position.coords.latitude;
+			myLng = position.coords.longitude;
+			renderMap();
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.  What a shame!");
+	}
+}
+
