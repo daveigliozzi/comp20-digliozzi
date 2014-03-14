@@ -78,14 +78,8 @@ function renderMap()
 		infowindow.open(map, marker);
 	});
 
-	//scheduleData = JSON.parse(request.responseText);
-
-	loopLines();
 	
-}
 
-function loopLines()
-{
 	for(var i = 0; i < lineData.length; i++)
 	{
 
@@ -186,8 +180,14 @@ function loopLines()
 		}
 		}
 	}
-
+	
 }
+
+//function loopLines()
+//{
+	
+
+//}
 
 //function lineColor(i)
 //{
