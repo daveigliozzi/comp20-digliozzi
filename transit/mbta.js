@@ -79,7 +79,7 @@ function renderMap()
 	// Create a marker
 	marker = new google.maps.Marker({
 		position: me,
-		title: "Here I Am!" + "<br/>" + myLat + ", " + myLng
+		title: "Here I Am!" + "<br/>" + myLat + ", " + myLng + "<br/>" + "Closest Stop: " + closestStop + "</br>" + "Distance to closest stop: " + closestDist
 	});
 	marker.setMap(map);
 		
@@ -218,5 +218,6 @@ function getClosest()
 	stops.sort(function(a, b){
 		return a["distance"]-b["distance"];
 	});
-	closestDist = stops[0];
+	closestDist = stops[0]["distance"];
+	closestStop = stops[0]["name"];
 }
