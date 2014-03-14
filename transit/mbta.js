@@ -30,7 +30,7 @@ function init()
 	request.onreadystatechange = dataReady;
 	request.send(null); //Go! Execute!
 
-	getMyLocation();
+
 }
 
 function dataReady()
@@ -38,6 +38,7 @@ function dataReady()
 
 	if(request.readyState == 4 && request.status == 200){
 		scheduleData = JSON.parse(request.responseText);
+		getMyLocation();
 	
 	}
 	else if(request.readyState == 4 && request.status == 500){
