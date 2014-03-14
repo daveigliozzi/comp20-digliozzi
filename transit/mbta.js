@@ -92,6 +92,7 @@ function renderMap()
 			});
 			if(i<0)
 			{
+				console.log("happy christmas");
 				var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 				path = new google.maps.Polyline({
 					path: segment,
