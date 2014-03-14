@@ -191,7 +191,7 @@ function getClosest()
 {
 	var lat2 = myLat;
 	var lon2 = myLng;
-	var stops [];
+	var stops = [];
 
 	for(var i = 0; i < lineData.length; i++)
 	{
