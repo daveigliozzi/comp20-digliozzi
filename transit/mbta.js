@@ -97,7 +97,7 @@ function renderMap()
 			infowindow.open(map, mark);	
 			});
 			console.log(i);
-			if((i > 0) && (lineData[i]["name"] == lineData[i-1]["name"]))
+			if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
 			{
 				console.log("happy christmas");
 				var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
