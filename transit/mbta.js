@@ -121,44 +121,44 @@ function identifyColor(i)
 
 function createRedMarker(i)
 {
-	mark = new google.maps.Marker({
+	mark1 = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 	title: lineData[i]["name"],
 	icon: "flag.png"
 	});
-	mark.setMap(map);
+	mark1.setMap(map);
 
-	google.maps.event.addListener(mark, 'click', function() {
-	infowindow.setContent(mark.title);
-	infowindow.open(map, mark);	
+	google.maps.event.addListener(mark1, 'click', function() {
+	infowindow.setContent(mark1.title);
+	infowindow.open(map, mark1);	
 	});
 }
 
 function createBlueMarker(i)
 {
-	mark = new google.maps.Marker({
+	mark2 = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 	title: lineData[i]["name"]
 	});
-	mark.setMap(map);
+	mark2.setMap(map);
 
-	google.maps.event.addListener(mark, 'click', function() {
-	infowindow.setContent(mark.title);
-	infowindow.open(map, mark);	
+	google.maps.event.addListener(mark2, 'click', function() {
+	infowindow.setContent(mark2.title);
+	infowindow.open(map, mark2);	
 	});
 }
 
 function createOrangeMarker(i)
 {
-	mark = new google.maps.Marker({
+	mark3 = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 	title: lineData[i]["name"]
 	});
-	mark.setMap(map);
+	mark3.setMap(map);
 
-	google.maps.event.addListener(mark, 'click', function() {
-	infowindow.setContent(mark.title);
-	infowindow.open(map, mark);	
+	google.maps.event.addListener(mark3, 'click', function() {
+	infowindow.setContent(mark3.title);
+	infowindow.open(map, mark3);	
 	});
 }
 
