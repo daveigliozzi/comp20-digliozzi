@@ -78,6 +78,8 @@ function renderMap()
 		infowindow.open(map, marker);
 	});
 
+	var scheduleData = JSON.parse(request.responseText);
+
 
 	for(var i = 0; i < lineData.length; i++)
 	{
