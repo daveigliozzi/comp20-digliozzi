@@ -18,6 +18,7 @@ var lineData = JSON.parse('[{"line":"Blue","name":"Wonderland","latitude":42.413
 var scheduleData;
 
 
+
 function init()
 {
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
@@ -123,7 +124,8 @@ function createRedMarker(i)
 {
 	mark1 = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"]
+	title: lineData[i]["name"],
+	icon: "flag.png"
 	});
 	mark1.setMap(map);
 
