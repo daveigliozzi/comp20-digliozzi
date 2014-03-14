@@ -97,7 +97,7 @@ function createMarker(i)
 {
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
 		{
-			console.log(lineData["line"]);
+			console.log(lineData[i]["line"]);
 			if(lineData[i]["line"] == "Blue")
 			{
 				mark = new google.maps.Marker({
