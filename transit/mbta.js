@@ -95,7 +95,7 @@ function renderMap()
 			markerArray[j].setMap(map);
 
 			google.maps.event.addListener(markerArray[j], 'click', function() {
-			infowindow.setContent(mark.title);
+			infowindow.setContent(markerArray[j].title);
 			infowindow.open(map, markerArray[j]);	
 			});
 			if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
