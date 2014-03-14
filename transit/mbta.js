@@ -115,6 +115,7 @@ function renderMarker(i)
 	google.maps.event.addListener(mark, 'click', function() {
 	infowindow.setContent(mark.title);
 	infowindow.open(map, mark);
+	});
 }
 
 /*function identifyColor(i)
