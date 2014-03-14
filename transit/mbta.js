@@ -123,8 +123,7 @@ function createRedMarker(i)
 {
 	mark1 = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"],
-	icon: "flag.png"
+	title: lineData[i]["name"]
 	});
 	mark1.setMap(map);
 
