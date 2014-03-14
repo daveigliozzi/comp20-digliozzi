@@ -99,10 +99,10 @@ function loopLines()
 
 function createMarker(i)
 {
-	console.log(lineData[i]["line"]);
+
 	if(lineData[i]["line"] == "Blue")
 	{
-			mark = new google.maps.Marker({
+			var mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"]
 			});
@@ -130,7 +130,7 @@ function createMarker(i)
 
 		if(lineData[i]["line"] == "Red")
 		{
-			mark = new google.maps.Marker({
+			var mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"],
 			icon: "flag1.png"
@@ -168,9 +168,7 @@ function createMarker(i)
 
 		else (lineData[i]["line"] == "Orange")
 		{
-
-			var mark;
-			mark = new google.maps.Marker({
+			var mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"]
 			});
