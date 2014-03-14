@@ -93,15 +93,7 @@ function loopLines()
 
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
 		{		
-				lineColor(i);
-		}
-	}
-
-}
-
-function lineColor(i)
-{
-	if(lineData[i]["line"] == "Blue")
+				if(lineData[i]["line"] == "Blue")
 		{
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
@@ -192,5 +184,13 @@ function lineColor(i)
 				path.setMap(map);
 			}
 		}
+		}
+	}
 
 }
+
+//function lineColor(i)
+//{
+	
+
+//}
