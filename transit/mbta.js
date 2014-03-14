@@ -84,11 +84,7 @@ function renderMap()
 	for(var i = 0; i < lineData.length; i++)
 	{
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
-		{
-			
-			if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
-			{
-				
+		{		
 				if(lineData[i]["line"] == "Blue")
 				{
 					var mark;
@@ -102,14 +98,18 @@ function renderMap()
 					infowindow.setContent(mark.title);
 					infowindow.open(map, mark);	
 					});
-					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
-					path = new google.maps.Polyline({
-					path: segment,
-					strokeColor: "#0000FF",
-					strokeOpacity: 1.0,
-					strokeWeight: 2
-					});
-					path.setMap(map);
+					if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"]){
+
+
+						var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
+						path = new google.maps.Polyline({
+						path: segment,
+						strokeColor: "#0000FF",
+						strokeOpacity: 1.0,
+						strokeWeight: 2
+						});
+						path.setMap(map);
+					}
 				}
 
 				else if(lineData[i]["line"] == "Red")
@@ -137,7 +137,8 @@ function renderMap()
 						path.setMap(map);
 
 					}
-					else{
+					else if (i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
+					{
 						var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 						path = new google.maps.Polyline({
 						path: segment,
@@ -164,16 +165,17 @@ function renderMap()
 					infowindow.setContent(mark.title);
 					infowindow.open(map, mark);	
 					});
-					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
-					path = new google.maps.Polyline({
-					path: segment,
-					strokeColor: "#FF6600",
-					strokeOpacity: 1.0,
-					strokeWeight: 2
-					});
-					path.setMap(map);
+					if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"]){
+						var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
+						path = new google.maps.Polyline({
+						path: segment,
+						strokeColor: "#FF6600",
+						strokeOpacity: 1.0,
+						strokeWeight: 2
+						});
+						path.setMap(map);
+					}
 				}
-			}
 		}
 	}
 
