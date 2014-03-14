@@ -215,6 +215,8 @@ function getClosest()
 		stops.push({"distance":miles,"name":lineData[i]["name"]})
 	}
 
-	stops.sort();
-	console.log(stops["distance"][0]);
+	stops.sort(function(a, b){
+		return a["distance"]-b["distance"];
+	});
+	closestDist = stops[0];
 }
