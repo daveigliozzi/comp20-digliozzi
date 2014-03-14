@@ -90,7 +90,6 @@ function loopLines()
 	for(var i = 0; i < lineData.length; i++)
 	{
 		createMarker(i);
-		renderLines(i);
 	}
 }
 
@@ -117,9 +116,11 @@ function renderMarker(i)
 	infowindow.setContent(mark.title);
 	infowindow.open(map, mark);
 	});
+
+	renderLines(i, mark);
 }
 
-function renderLines(i)
+function renderLines(i, mark)
 {
 	if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
 	{
