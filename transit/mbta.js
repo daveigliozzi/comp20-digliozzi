@@ -51,3 +51,24 @@ function getMyLocation()
 	}
 }
 
+
+function renderMap()
+{
+	me = new google.maps.LatLng(myLat, myLng);
+	
+	// Update map and go there...
+	map.panTo(me);
+
+	// Create a marker
+	marker = new google.maps.Marker({
+		position: me,
+		title: "Here I Am!"
+	});
+	marker.setMap(map);
+		
+	// Open info window on click of marker
+	google.maps.event.addListener(marker, 'click', function() {
+		infowindow.setContent(marker.title);
+		infowindow.open(map, marker);
+	});
+}
