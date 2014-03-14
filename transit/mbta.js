@@ -90,7 +90,7 @@ function renderMap()
 			infowindow.setContent(mark.title);
 			infowindow.open(map, mark);	
 			});
-			if(i<0)
+			if(i < 0)
 			{
 				console.log("happy christmas");
 				var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
