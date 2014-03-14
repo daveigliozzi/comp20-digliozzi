@@ -138,14 +138,29 @@ function renderLines(i, mark)
 
 		if(lineData[i]["line"] == "Red")
 		{
-			var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
-			path = new google.maps.Polyline({
-			path: segment,
-			strokeColor: "#FF0000",
-			strokeOpacity: 1.0,
-			strokeWeight: 2
-			});
-			path.setMap(map);
+			if(lineData[i]["name"] == "Savin Hill")
+			{
+				var segment = [mark.position, new google.maps.LatLng(42.320685, -71.052391)];
+				path = new google.maps.Polyline({
+				path: segment,
+				strokeColor: "#FF0000",
+				strokeOpacity: 1.0,
+				strokeWeight: 2
+				});
+				path.setMap(map);
+
+			}
+			else if (i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
+			{
+				var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
+				path = new google.maps.Polyline({
+				path: segment,
+				strokeColor: "#FF0000",
+				strokeOpacity: 1.0,
+				strokeWeight: 2
+				});
+				path.setMap(map);
+			}
 		}
 
 		if(lineData[i]["line"] == "Orange")
