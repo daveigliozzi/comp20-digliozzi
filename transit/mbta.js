@@ -107,9 +107,9 @@ function renderMap()
 					strokeColor: "#0000FF",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				};
+				}
 
-				if(lineData[i]["line"] == "Red")
+				else if(lineData[i]["line"] == "Red")
 				{
 					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 					path = new google.maps.Polyline({
@@ -117,9 +117,9 @@ function renderMap()
 					strokeColor: "#FF0000",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				};
+				}
 
-				if(lineData[i]["line"] == "Orange")
+				else if(lineData[i]["line"] == "Orange")
 				{
 					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 					path = new google.maps.Polyline({
@@ -127,7 +127,7 @@ function renderMap()
 					strokeColor: "#FF6600",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				};
+				}
 
 				
 				});
