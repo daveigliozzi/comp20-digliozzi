@@ -85,23 +85,23 @@ function renderMap()
 	{
 		if (scheduleData["line"].toLowerCase() == lineData[i]["line"].toLowerCase())
 		{
-			var mark;
-			mark = new google.maps.Marker({
-			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-			title: lineData[i]["name"],
-			icon: "flag1.png"
-			});
-			mark.setMap(map);
-
-			google.maps.event.addListener(mark, 'click', function() {
-			infowindow.setContent(mark.title);
-			infowindow.open(map, mark);	
-			});
+			
 			if(i > 0 && lineData[i]["line"] == lineData[i-1]["line"])
 			{
 				
 				if(lineData[i]["line"] == "Blue")
 				{
+					var mark;
+					mark = new google.maps.Marker({
+					position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
+					title: lineData[i]["name"]
+					});
+					mark.setMap(map);
+
+					google.maps.event.addListener(mark, 'click', function() {
+					infowindow.setContent(mark.title);
+					infowindow.open(map, mark);	
+					});
 					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 					path = new google.maps.Polyline({
 					path: segment,
@@ -114,6 +114,18 @@ function renderMap()
 
 				else if(lineData[i]["line"] == "Red")
 				{
+					var mark;
+					mark = new google.maps.Marker({
+					position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
+					title: lineData[i]["name"],
+					icon: "flag1.png"
+					});
+					mark.setMap(map);
+
+					google.maps.event.addListener(mark, 'click', function() {
+					infowindow.setContent(mark.title);
+					infowindow.open(map, mark);	
+					});
 					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 					path = new google.maps.Polyline({
 					path: segment,
@@ -126,6 +138,18 @@ function renderMap()
 
 				else if(lineData[i]["line"] == "Orange")
 				{
+
+					var mark;
+					mark = new google.maps.Marker({
+					position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
+					title: lineData[i]["name"]
+					});
+					mark.setMap(map);
+
+					google.maps.event.addListener(mark, 'click', function() {
+					infowindow.setContent(mark.title);
+					infowindow.open(map, mark);	
+					});
 					var segment = [mark.position, new google.maps.LatLng(lineData[i-1]["latitude"], lineData[i-1]["longitude"])];
 					path = new google.maps.Polyline({
 					path: segment,
