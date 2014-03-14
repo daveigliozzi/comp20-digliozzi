@@ -96,6 +96,7 @@ function renderMap()
 			infowindow.setContent(mark.title);
 			infowindow.open(map, mark);	
 			});
+			console.log(i);
 			if(i < 0)
 			{
 				console.log("happy christmas");
