@@ -131,7 +131,6 @@ function lineColor(i)
 
 		if(lineData[i]["line"] == "Red")
 		{
-			var mark;
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"],
