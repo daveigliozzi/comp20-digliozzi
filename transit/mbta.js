@@ -134,7 +134,7 @@ function lineColor(i)
 			mark = new google.maps.Marker({
 			position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
 			title: lineData[i]["name"],
-			icon: "flag1.png"
+			//icon: "flag1.png"
 			});
 			mark.setMap(map);
 
