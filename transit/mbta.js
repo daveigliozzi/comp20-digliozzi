@@ -107,7 +107,7 @@ function renderMap()
 					strokeColor: "#0000FF",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				}
+				};
 
 				if(lineData[i]["line"] == "Red")
 				{
@@ -117,7 +117,7 @@ function renderMap()
 					strokeColor: "#FF0000",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				}
+				};
 
 				if(lineData[i]["line"] == "Orange")
 				{
@@ -127,7 +127,7 @@ function renderMap()
 					strokeColor: "#FF6600",
 					strokeOpacity: 1.0,
 					strokeWeight: 2
-				}
+				};
 
 				
 				});
