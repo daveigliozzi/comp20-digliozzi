@@ -229,7 +229,7 @@ function getLineData(j)
 	{
 		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[j]["name"])
 		{
-			return scheduleData["schedule"][i]["Predictions"];
+			console.log(scheduleData["schedule"][i]["Predictions"]);
 		}
 	}
 }
