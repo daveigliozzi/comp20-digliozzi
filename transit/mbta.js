@@ -115,9 +115,10 @@ function createMarker(i)
 
 function renderMarker(i)
 {
+	var time = getLineData(i);
 	var mark = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"],
+	title: lineData[i]["name"] + "</br>" + time,
 	icon: "flag1.png"
 	});
 	mark.setMap(map);
@@ -220,4 +221,15 @@ function getClosest()
 	});
 	closestDist = stops[0]["distance"];
 	closestStop = stops[0]["name"];
+}
+
+function getLineData(j)
+{
+	for(var i = 0; i <scheduleData["schedule"].length)
+	{
+		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[i]["name"])
+		{
+			return scheduleData["schedule"][i]["Predictions"]["Seconds"];
+		}
+	}
 }
