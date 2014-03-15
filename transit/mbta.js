@@ -225,7 +225,7 @@ function getClosest()
 
 function getLineData(j)
 {
-	for(var i = 0; i <scheduleData["schedule"].length)
+	for(var i = 0; i <scheduleData["schedule"].length; i++)
 	{
 		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[i]["name"])
 		{
