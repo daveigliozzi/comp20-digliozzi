@@ -117,14 +117,14 @@ function renderMarker(i)
 {
 	var estTime;
 	var destination;
-	for(var i = 0; i <scheduleData["schedule"].length; i++)
+	for(var j = 0; j <scheduleData["schedule"].length; j++)
 	{
-		for(var k = 0; k <scheduleData["schedule"][i]["Predictions"].length; k++)
+		for(var k = 0; k <scheduleData["schedule"][j]["Predictions"].length; k++)
 		{	
-			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[i]["name"])
+			if(scheduleData["schedule"][j]["Predictions"][k]["Stop"] == lineData[i]["name"])
 			{
-				estTime = scheduleData["schedule"][i]["Predictions"][k]["Seconds"];
-				destination = scheduleData["schedule"][i]["Destination"];
+				estTime = scheduleData["schedule"][j]["Predictions"][k]["Seconds"];
+				destination = scheduleData["schedule"][j]["Destination"];
 			}
 		}
 	}
@@ -132,7 +132,7 @@ function renderMarker(i)
 
 	var mark = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"] + "</br>" + "Estimated Time" + estTime + "</br>" + "Destinaton: " + destination,
+	title: lineData[i]["name"] + "</br>" + "Estimated Time: " + estTime + " seconds" +"</br>" + "Destinaton: " + destination,
 	icon: "flag1.png"
 	});
 	mark.setMap(map);
