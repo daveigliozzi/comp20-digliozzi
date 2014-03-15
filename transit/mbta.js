@@ -227,10 +227,12 @@ function getLineData(j)
 {
 	for(var i = 0; i <scheduleData["schedule"].length; i++)
 	{
-		console.log(scheduleData["schedule"][i]["Predictions"]["Stop"]);
-		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[j]["name"])
-		{
-			//console.log(scheduleData["schedule"][i]["Predictions"]);
+		for(var k = 0; k <scheduleData["schedule"][i]["Predictions"].length; k++)
+		{	
+			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[j]["name"])
+			{
+				console.log(scheduleData["schedule"][i]["Predictions"][k]["Stop"]);
+			}
 		}
 	}
 }
