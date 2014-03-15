@@ -121,7 +121,7 @@ function renderMarker(i)
 	{
 		for(var k = 0; k <scheduleData["schedule"][i]["Predictions"].length; k++)
 		{	
-			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[j]["name"])
+			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[i]["name"])
 			{
 				estTime = scheduleData["schedule"][i]["Predictions"][k]["Seconds"];
 				destination = scheduleData["schedule"][i]["Destination"];
