@@ -236,8 +236,3 @@ function getClosest()
 	closestDist = stops[0]["distance"];
 	closestStop = stops[0]["name"];
 }
-
-function getLineData(j)
-{
-	
-}
