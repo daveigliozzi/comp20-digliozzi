@@ -227,7 +227,7 @@ function getLineData(j)
 {
 	for(var i = 0; i <scheduleData["schedule"].length; i++)
 	{
-		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[i]["name"])
+		if(scheduleData["schedule"][i]["Predictions"]["Stop"] == lineData[j]["name"])
 		{
 			return scheduleData["schedule"][i]["Predictions"];
 		}
