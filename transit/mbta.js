@@ -115,10 +115,24 @@ function createMarker(i)
 
 function renderMarker(i)
 {
-	var time = getLineData(i);
+	var estTime;
+	var destination;
+	for(var i = 0; i <scheduleData["schedule"].length; i++)
+	{
+		for(var k = 0; k <scheduleData["schedule"][i]["Predictions"].length; k++)
+		{	
+			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[j]["name"])
+			{
+				estTime = scheduleData["schedule"][i]["Predictions"][k]["Seconds"];
+				destination = scheduleData["schedule"][i]["Destination"];
+			}
+		}
+	}
+
+
 	var mark = new google.maps.Marker({
 	position: new google.maps.LatLng(lineData[i]["latitude"], lineData[i]["longitude"]),
-	title: lineData[i]["name"] + "</br>" + time,
+	title: lineData[i]["name"] + "</br>" + "Estimated Time" + estTime + "</br>" + "Destinaton: " + destination,
 	icon: "flag1.png"
 	});
 	mark.setMap(map);
@@ -225,14 +239,5 @@ function getClosest()
 
 function getLineData(j)
 {
-	for(var i = 0; i <scheduleData["schedule"].length; i++)
-	{
-		for(var k = 0; k <scheduleData["schedule"][i]["Predictions"].length; k++)
-		{	
-			if(scheduleData["schedule"][i]["Predictions"][k]["Stop"] == lineData[j]["name"])
-			{
-				console.log(scheduleData["schedule"][i]["Predictions"][k]["Stop"]);
-			}
-		}
-	}
+	
 }
