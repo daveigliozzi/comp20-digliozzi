@@ -8,27 +8,55 @@
 	function update(){
 
 		var currentdate = new Date();
+		var minute; 
+		if(currentdate.getMinutes() < 10){
+			minute = "0" + currentdate.getMinutes();
+		}
+		else{
+			minute = currentdate.getMinutes();
+		}
 
     	var datetime = (currentdate.getMonth()+1) + "/" + currentdate.getDate() +
     	 "/" + currentdate.getFullYear() + " " 
     	+ currentdate.getHours() + ":" 
-    	+ currentdate.getMinutes();
+    	+ minute;
+
+    	txt = document.getElementById("msg").value;
+    	var output = datetime + " -- " + txt;
+		localStorage[new Date().getTime()] = output;
 
 
-		var newUpdate = document.getElementById("msg").value;
+
+    	/*var newUpdate = document.getElementById("msg").value;
 		var status = document.getElementById("status");
 		var newStatus = document.createElement("div");
 		var firstElement = status.firstChild;
 		status.insertBefore(newStatus, firstElement);
-		newStatus.innerHTML = datetime + "  --  " + newUpdate;
+		var output = datetime + " -- " + newUpdate;
+		localStorage.setItem()
+		newStatus.innerHTML = output;
 		var clear = document.getElementById("msg");
-		clear.value = "";
+		clear.value = "";*/
+
 	};
+
+	function init()
+	{
+		var status = document.getElementById("status");
+		var output = "";
+		for (key in localStorage) {
+			output = output + "<p>" + localStorage[key] + "</p>\n";
+		}
+		status.innerHTML = output;
+	}
+	
+
+
 
 </script>
 </head>
 
-<body>
+<body onload = "init()">
 	<h1>Fecebook</h1>
 	<div id="nav">
 		<ul>
