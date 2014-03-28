@@ -25,29 +25,28 @@
     	var output = datetime + " -- " + txt;
 		localStorage[new Date().getTime()] = output;
 
-
-
-    	/*var newUpdate = document.getElementById("msg").value;
 		var status = document.getElementById("status");
 		var newStatus = document.createElement("div");
 		var firstElement = status.firstChild;
 		status.insertBefore(newStatus, firstElement);
-		var output = datetime + " -- " + newUpdate;
-		localStorage.setItem()
 		newStatus.innerHTML = output;
 		var clear = document.getElementById("msg");
-		clear.value = "";*/
+		clear.value = "";
 
 	};
 
 	function init()
-	{
-		var status = document.getElementById("status");
-		var output = "";
+	{	
 		for (key in localStorage) {
-			output = output + "<p>" + localStorage[key] + "</p>\n";
+			//output = output + "<p>" + localStorage[key] + "</p>\n";
+			var status = document.getElementById("status");
+			var newStatus = document.createElement("div");
+			var firstElement = status.firstChild;
+			status.insertBefore(newStatus, firstElement);
+			var output = localStorage[key];
+	
+			newStatus.innerHTML = output;
 		}
-		status.innerHTML = output;
 	}
 	
 

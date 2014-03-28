@@ -1,3 +1,4 @@
 David Igliozzi
 Comp 20: Web Programming
-Lab 5: status update
+Lab 7: status update revisited
+
