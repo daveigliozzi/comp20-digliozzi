@@ -7,55 +7,48 @@
 	<h1>Security Assessment of Game Center</h1>
 	<h2>Introduction</h2>
 	<p>Ming Chow Industries hired me to evaluate the security of the web application Game Center. Game Center was developed to take in data from the new, very popular game 2048, developed by Gabriele Cirulli, and use it to create a High Score leader board. Unfortunately, there are vulnerabilities in Game Center that make it unacceptable as a web application.</p>
+	</br>
 	<h2>Methodology</h2>
-	<p>To find vulnerabilities in Game Center, I first conducted what is referred to as “black box” testing. “Black box” testing involves using tools such as proxies to try to modify code or gain access to the application’s information. I used the proxy Burp Suite for this phase. After “black box” testing, I went into the actual code to look for vulnerabilities myself.</p>
+	<p>To find vulnerabilities in Game Center, I first conducted what is referred to as “black box” testing. Black box testing involves using tools such as proxies to try to modify code or gain access to the information in the database. I used the proxy Burp Suite for this phase. After black box testing, I went into the actual code to look for vulnerabilities myself.</p></br>
 	<h2>Abstract of Findings</h2>
 
-	<p></p>
+	<p></p></br>
 	<h2>Issues Found</h2>
 
 	<h3>Cross-Site-Scripting (XSS)</h3>
-	<h4>Issue (e.g., database injection, really bad programming practice)</h3>
-	<p></p>
-	<h4>Location / page where issue was found</h3>
-	<p></p>
-	<h4>Severity of issue (e.g., low, medium , or high). Justify your answer.</h3>
-	<p></p>
-	<h4>Description of issue. How did you find it? A screenshot of problem is excellent.</h3>
-	<p></p>
-	<h4>Proof of vulnerability. Screenshots are ideal.</h3>
-	<p></p>
-	<h4>Resolution. How did you resolve the issue? Show code if possible.</h3>
-	<p></p>
 	
+	<h4>Location:</h3>
+	<p>I found this vulnerability in the app.js file in the app.get function on line 15.</p>
+	<h4>Severity of issue:</h3>
+	<p>High - with XSS, attackers can enter in their own code into the HTML file in the form of a script tag. This code can execute functions that put the application and the data at risk.</p>
+	<h4>Description:</h3>
+	<p>I found this vulnerability by using a proxy to change the data sent to the server from the client-side. I entered in a script tag with code that was executed through the web application Game Center.</p>
+	<h4>Resolution:</h3>
+	<p>This issue can be resolved by filtering the data sent from the client. This can be done in a myriad of ways, such as using an if statement to look for certain signs that the data from the user may be a script tag of some sort.</p>
+	</br>
 	<h3>Adding Non-existent Database Fields</h3>
-	<h4>Issue (e.g., database injection, really bad programming practice)</h3>
-	<p></p>
-	<h4>Location / page where issue was found</h3>
-	<p></p>
-	<h4>Severity of issue (e.g., low, medium , or high). Justify your answer.</h3>
-	<p></p>
-	<h4>Description of issue. How did you find it? A screenshot of problem is excellent.</h3>
-	<p></p>
-	<h4>Proof of vulnerability. Screenshots are ideal.</h3>
-	<p></p>
-	<h4>Resolution. How did you resolve the issue? Show code if possible.</h3>
-	<p></p>
-
-	<h3>Filling Up the Database</h3>
-		<h4>Issue (e.g., database injection, really bad programming practice)</h3>
-	<p></p>
-	<h4>Location / page where issue was found</h3>
-	<p></p>
-	<h4>Severity of issue (e.g., low, medium , or high). Justify your answer.</h3>
-	<p></p>
-	<h4>Description of issue. How did you find it? A screenshot of problem is excellent.</h3>
-	<p></p>
-	<h4>Proof of vulnerability. Screenshots are ideal.</h3>
-	<p></p>
-	<h4>Resolution. How did you resolve the issue? Show code if possible.</h3>
-	<p></p>
 	
+	<h4>Location:</h3>
+	<p>I found this vulnerability in the app.js file. </p>
+	<h4>Severity of issue:</h3>
+	<p>Low - This can possibly fill up the database, but there is no serious repercussion of extra database fields in the JSON file since nothing in the code allows it to come through on the web application.</p>
+	<h4>Description:</h3>
+	<p>I discovered by looking through the code for app.js that as long as the input has the fields specified, there can be other fields added to the document in the database.</p>
+	<h4>Resolution:</h3>
+	<p>This issue can be resolved by building an object from the fields the developer wants.</p>
+	</br>
+	<h3>Filling Up the Database</h3>
+		
+	<h4>Location:</h3>
+	<p>I found this vulnerability in the app.js file.</p>
+	<h4>Severity of issue:</h3>
+	<p>High - Not only can attackers exploit this vulnerability, any user can exploit this vulnerability by simply playing the game too much. The database only has 5 MB of storage and cannot handle too much data.</p>
+	<h4>Description:</h3>
+	<p>I found this issue by looking through the mongoDB database specifics. This is less of a code issue and more of an implementation issue.</p>
+	<h4>Resolution:</h3>
+	<p>The developer can resolve this issue by getting a bigger database to store data.</p>
+
+	</br>
 	<h2>Conclusion</h2>
 	<p></p>
 
