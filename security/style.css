@@ -4,13 +4,20 @@ body {
   line-height: 1.6;
   padding-top: 5px;
   padding-bottom: 5px;
-  background-color: white;
-  padding: 30px; }
+  background-color: #005566;
+  padding: 30px;
+  color: white; }
 
   #alert{
   font-family: Helvetica, arial, sans-serif;
   font-size: 14px;
   
-  color: red;
+  color: white;
 
   }
+
+  h2 {
+  	color: #dbb5ff;
+  }
+
+  
